@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="propertiesTranslation:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/propertiesTranslation_jar</output-path>
+    <root id="archive" name="propertiesTranslation.jar">
+      <element id="module-output" name="propertiesTranslation" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/fastjson-1.2.47.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

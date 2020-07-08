@@ -7,7 +7,7 @@ import com.lr.demo.TransApi;
 
 import java.io.*;
 
-public class TranslationTool {
+public class TranslationTool implements Translation {
     String logPath;
 
     public File[] GetFiles(String path) {
@@ -32,7 +32,6 @@ public class TranslationTool {
         TransResultJson retuenJson = JSON.toJavaObject(jsonObject, TransResultJson.class);
         return retuenJson;
     }
-
     public void TranslationFile(File file, String FromLanguage, String ToLanguage, String ToPath, int IsReverse) throws IOException, InterruptedException {
         logPath = ToPath + "//log";
         BufferedReader br = new BufferedReader(new FileReader(file));
@@ -83,6 +82,7 @@ public class TranslationTool {
         log_ps.close();
     }
 
+    @Override
     public void translation(String FromPath, String ToPath, String FromLanguage, String ToLanguage, int IsReverse) {
         System.err.println(FromPath);
         File From = new File(FromPath);
@@ -98,7 +98,7 @@ public class TranslationTool {
         for (File f : files) {
             System.out.println(f.getName());
             try {
-//                this.TranslationFile(f, FromLanguage, ToLanguage, ToPath,IsReverse);
+//              this.TranslationFile(f, FromLanguage, ToLanguage, ToPath,IsReverse);
                 this.TranslationFile(f, FromLanguage, ToLanguage, ToPath, IsReverse);
             } catch (IOException e) {
                 e.printStackTrace();
